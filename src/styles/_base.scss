@@ -20,16 +20,14 @@ html {
 }
 
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: Jost, sans-serif;
   color: $color-text-grey;
-  background-color: $color-background-grey;
 }
 
 #root {
   min-height: 100%;
   height: 100%;
 }
-
 
 img {
   vertical-align: top;
@@ -52,8 +50,6 @@ button {
   cursor: pointer;
 }
 
-
 ul {
   list-style-type: none;
 }
-

@@ -28,6 +28,7 @@ module.exports= {"presets": [
         "@pages": path.resolve(__dirname, "./src/pages"),
         "@routes": path.resolve(__dirname, "./src/routes"),
         "@store": path.resolve(__dirname, "./src/store"),
+        "@providers": path.resolve(__dirname, "./src/providers"),
         "@styles": path.resolve(__dirname, "./src/styles")
     }
   }]

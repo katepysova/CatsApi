@@ -2,95 +2,96 @@
 @import "src/styles/functions";
 
 .nav {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+  }
 
-    &__list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 16px;
+  &__card {
+    &-image {
+      padding-bottom: m-percentage(198, 138);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 10px;
+      border: 4px solid rgba($color-white, 0.6);
+      transition: all 0.2s;
+
+      img {
+        position: absolute;
+        object-fit: contain;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: m-percentage(100, 138);
+      }
     }
 
-    &__card {
-
-        &-image {
-            padding-bottom: m-percentage(198, 138);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 10px;
-            border: 4px solid rgba($color-white, 0.6);
-            transition: all .2s;
-           
-            img {
-                position: absolute;
-                object-fit: contain;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: m-percentage(100, 138);
-            }
-
-        }
-
-        &-text {
-            text-transform: uppercase;
-            color: $color-pink;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 16px;
-            letter-spacing: 2px;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: $color-white;
-            transition: all .2s;
-        }
-
-        &--1 {
-            .nav__card-image {
-                background-color: $color-purple;
-            }
-           
-        }
-
-        &--2 {
-            .nav__card-image {
-                background-color: $color-green;
-            }
-            
-        }
-
-        &--3 {
-            .nav__card-image {
-                background-color: $color-yellow;
-                img {
-                   top: auto;
-                   bottom: 0;
-                   transform: translateX(-50%);
-                }
-            }
-        }
-
+    &-text {
+      text-transform: uppercase;
+      color: $color-pink;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 2px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: $color-white;
+      transition: all 0.2s;
     }
 
-
-
-    &__link {
-        &:hover {
-            .nav__card-image {
-                border-color: $color-white;
-            }
-            .nav__card-text {
-                background-color: $color-light-pink;
-            }
-        }
-
-        &.nav__link--active {
-            .nav__card-image {
-                border-color: $color-light-pink;
-            }
-            .nav__card-text {
-                background-color: $color-pink;
-                color: $color-white;
-            }
-        }
+    &--1 {
+      .nav__card-image {
+        background-color: $color-purple;
+      }
     }
+
+    &--2 {
+      .nav__card-image {
+        background-color: $color-green;
+      }
+    }
+
+    &--3 {
+      .nav__card-image {
+        background-color: $color-yellow;
+
+        img {
+          top: auto;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      .nav__card-image {
+        border-color: $color-white;
+      }
+
+      .nav__card-text {
+        background-color: $color-light-pink;
+      }
+    }
+
+    &.nav__link--active {
+      .nav__card-image {
+        border-color: $color-light-pink;
+      }
+
+      .nav__card-text {
+        background-color: $color-pink;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.dark-theme {
+  .nav__card-text {
+    background-color: rgba($color-white, 0.1);
+  }
 }

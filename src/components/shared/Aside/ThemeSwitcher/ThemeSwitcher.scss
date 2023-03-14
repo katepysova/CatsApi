@@ -1,0 +1,59 @@
+@import "src/styles/variables";
+
+.switch {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50px;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: $color-light-pink;
+
+  &__container {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__indicator {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-pink;
+  }
+
+  &__circle {
+    z-index: 1;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $color-pink;
+    transition: all 0.3s;
+  }
+
+  &__slider {
+    display: none;
+  }
+
+  &__slider:checked + .switch__circle {
+    transform: translateX(20px);
+  }
+}
+
+.dark-theme {
+  .switch {
+    background-color: rgba($color-pink, 0.2);
+
+    &__indicator {
+      background-color: rgba($color-white, 0.05);
+    }
+  }
+}
