@@ -1,0 +1,37 @@
+@import "src/styles/typography";
+
+.aside {
+    min-height: 100vh;
+    padding: 30px 30px;
+    position: sticky;
+    top: 0;
+    align-self: start;
+
+    &__container {
+        max-width: 446px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        margin-bottom: 80px;
+        &-img {
+            max-width: 108px;
+        }
+    }
+
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__welcome {
+        @include paragraph;
+        margin-bottom: 60px;
+    }
+
+    &__paragraph {
+        @include paragraph($color-black);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+}
