@@ -6,7 +6,7 @@ export const asyncSelectStyles = {
     boxShadow: null,
     borderType: "solid",
     borderWidth: "2px",
-    padding: "10px 10px 10px 20px",
+    padding: "8px 10px 8px 20px",
     borderRadius: "20px",
     alignItems: "center",
     cursor: "pointer",
@@ -28,7 +28,7 @@ export const asyncSelectStyles = {
     ...base,
     margin: 0,
     padding: 0,
-    paddingRight: 20
+    paddingRight: 35
   }),
   input: (base) => ({
     ...base,

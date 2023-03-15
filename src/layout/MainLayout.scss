@@ -1,6 +1,5 @@
 @import "src/styles/variables";
 
-
 .wrapper {
   background-color: $color-background;
 
@@ -10,7 +9,5 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 0.514fr 0.4862fr;
-    
   }
 }
-

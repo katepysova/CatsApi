@@ -4,6 +4,8 @@ import API from "@common/api.js";
 import debounce from "lodash.debounce";
 import { apiUrls } from "@constants/apiUrls.js";
 import { useState } from "react";
+import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
+import icons from "@components/shared/Icon/icons.js";
 
 function VotingPageContent() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -32,6 +34,12 @@ function VotingPageContent() {
 
   return (
     <div style={{ padding: 50 }}>
+      <SquareButton classType="primary" size="small" symbol={icons.search} />
+      <SquareButton classType="secondary" size="small" symbol={icons.search} />
+
+      <SquareButton classType="primary" size="large" symbol={icons.search} />
+      <SquareButton classType="secondary" size="large" symbol={icons.search} />
+
       <AsyncSelect
         value={selectedOption}
         onChange={(so) => setSelectedOption(so)}
