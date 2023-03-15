@@ -4,12 +4,14 @@ import routes from "@constants/routes.js";
 import { IS_DEV } from "@constants/constants.js";
 import UiKitPage from "@pages/ui-kit.jsx";
 import HomePage from "@pages/index.jsx";
+import VotingPage from "@pages/voting.jsx";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index exact path={routes.index} element={<HomePage />} />
+        <Route index exact path={routes.voting} element={<VotingPage />} />
 
         {IS_DEV && <Route exact path={routes.uiKit} element={<UiKitPage />} />}
 

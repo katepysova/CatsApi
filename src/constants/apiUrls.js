@@ -1,7 +1,8 @@
-export const baseURL = "https://api.wisey.app/api/v1";
+export const baseURL = process.env.REACT_APP_API_URL;
 
 export const apiUrls = {
-  getToken: "/auth/anonymous?platform=subscriptions",
-  previewCourses: "/core/preview-courses",
-  previewCourse: (courseId) => `/core/preview-courses/${courseId}`
+  votes: "/votes",
+  searchImages: "/images/search",
+  breeds: "/breeds",
+  getBreedById: (id) => `/images/search?breeds_ids=${id}`
 };
