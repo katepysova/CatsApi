@@ -10,8 +10,10 @@ function MainLayout({ children }) {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={cn("wrapper", theme)}>
-      <Aside />
-      <main className="main">{children}</main>
+      <div className="wrapper__container">
+        <Aside />
+        <main className="main">{children}</main>
+      </div>
     </div>
   );
 }

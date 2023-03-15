@@ -39,6 +39,7 @@ function AsyncSelect({
       placeholder={placeholder}
       loadOptions={loadOptions}
       className="async-select"
+      classNamePrefix="async-select"
       components={{
         IndicatorSeparator: () => null,
         DropdownIndicator

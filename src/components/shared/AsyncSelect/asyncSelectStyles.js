@@ -4,7 +4,6 @@ export const asyncSelectStyles = {
     height: 60,
     minHeight: 60,
     boxShadow: null,
-    borderColor: state.isFocused ? "#FF868E" : "#FFF",
     borderType: "solid",
     borderWidth: "2px",
     padding: "10px 10px 10px 20px",
@@ -18,7 +17,7 @@ export const asyncSelectStyles = {
     },
 
     "&:active": {
-      borderColor: "#FF868E !important"
+      borderColor: "#FF868E"
     },
 
     "&:focus": {
@@ -39,7 +38,6 @@ export const asyncSelectStyles = {
   }),
   singleValue: (base) => ({
     ...base,
-    color: "#1D1D1D",
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: "20px",
@@ -67,6 +65,8 @@ export const asyncSelectStyles = {
   menu: (provided) => ({
     ...provided,
     zIndex: 40,
+    borderType: "solid",
+    borderWidth: "2px",
     overflow: "hidden",
     borderRadius: "30px",
     border: "none",
@@ -84,13 +84,8 @@ export const asyncSelectStyles = {
     fontSize: 16,
     position: "relative",
     fontWeight: 400,
-    color: state.isSelected ? "#1D1D1D" : "#8C8C8C",
-    backgroundColor: state.isSelected ? "#FBE0DC" : "#fff",
+    color: state.isSelected ? "#FF868E" : "#8C8C8C",
     padding: "5px 20px",
-    cursor: "pointer",
-
-    "&:active": {
-      backgroundColor: "#ececec"
-    }
+    cursor: "pointer"
   })
 };

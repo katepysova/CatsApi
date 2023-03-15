@@ -3,16 +3,20 @@
   --color-bg-dark: #1d1d1d;
   --color-text-light: #1d1d1d;
   --color-text-dark: #fff;
+  --color-form-elem-light: #fff;
+  --color-form-elem-dark: rgba(255, 255, 255, 0.05)
 }
 
 .light-theme {
   --color-bg: var(--color-bg-light);
   --color-text: var(--color-text-light);
+  --color-form-elem: var(--color-form-elem-light);
 }
 
 .dark-theme {
   --color-bg: var(--color-bg-dark);
   --color-text: var(--color-text-dark);
+  --color-form-elem: var(--color-form-elem-dark);
 }
 
 $color-black: #1d1d1d;
@@ -25,6 +29,7 @@ $color-pink: #ff868e;
 $color-light-pink: #fbe0dc;
 $color-background: var(--color-bg);
 $color-text: var(--color-text);
+$color-form-elem: var(--color-form-elem);
 $bp-extra-large: 1350px;
 $bp-large: 1200px;
 $bp-medium: 990px;

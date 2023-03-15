@@ -12,3 +12,36 @@
     color: $color-pink;
   }
 }
+
+.async-select__control {
+  border-color: $color-form-elem !important;
+  background-color: $color-form-elem !important;
+  box-shadow: none;
+
+  &.async-select__control--is-focused {
+    outline: none;
+    border-color: $color-pink !important;
+  }
+}
+
+.async-select__option {
+  background-color: transparent !important;
+}
+
+.async-select__single-value,
+.async-select__input-container {
+  color: $color-text !important;
+}
+
+.async-select__menu {
+  background-color: $color-form-elem !important;
+  border-color: $color-form-elem !important;
+}
+
+.dark-theme {
+  .async-select {
+    &__search {
+      background-color: rgba($color-pink, 0.2) !important;
+    }
+  }
+}

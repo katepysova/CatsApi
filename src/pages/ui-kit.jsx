@@ -36,6 +36,7 @@ function UiKitPage() {
         value={selectedOption}
         onChange={(so) => setSelectedOption(so)}
         loadOptions={loadOptions}
+        placeholder={"Search for breeds by name"}
       />
     </div>
   );

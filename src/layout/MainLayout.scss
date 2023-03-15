@@ -1,10 +1,16 @@
 @import "src/styles/variables";
 
+
 .wrapper {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.514fr 0.4862fr;
   background-color: $color-background;
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.514fr 0.4862fr;
+    
+  }
 }
+
