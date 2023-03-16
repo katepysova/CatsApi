@@ -1,52 +1,20 @@
-import AsyncSelect from "@components/shared/AsyncSelect/AsyncSelect.jsx";
-import Logger from "@common/logger.js";
-import API from "@common/api.js";
-import debounce from "lodash.debounce";
-import { apiUrls } from "@constants/apiUrls.js";
-import { useState } from "react";
-import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
-import icons from "@components/shared/Icon/icons.js";
+import ActionsLine from "@components/shared/ActionsLine/ActionsLine.jsx";
+import { useNavigate } from "react-router-dom";
+import routes from "@constants/routes.js";
+import "./VotingPageContent.scss";
 
 function VotingPageContent() {
-  const [selectedOption, setSelectedOption] = useState("");
-
-  const mapOptionsToValues = (options) => {
-    return options.map((option) => ({
-      value: option.id,
-      label: option.name
-    }));
+  const navigate = useNavigate();
+  const onSearchSuccess = (selectedOption) => {
+    navigate(routes.search.path(selectedOption.value));
   };
 
-  const loadOptions = debounce((inputValue, callback) => {
-    API.get(apiUrls.breeds)
-      .then((response) => response.data)
-      .then((breedsData) => {
-        const formattedBreeds = mapOptionsToValues(breedsData);
-        const filterOptions = (inputValue) => {
-          return formattedBreeds.filter((i) =>
-            i.label.toLowerCase().includes(inputValue.toLowerCase())
-          );
-        };
-        callback(filterOptions(inputValue));
-      })
-      .catch((error) => Logger.error(error));
-  }, 300);
-
   return (
-    <div style={{ padding: 50 }}>
-      <SquareButton classType="primary" size="small" symbol={icons.search} />
-      <SquareButton classType="secondary" size="small" symbol={icons.search} />
-
-      <SquareButton classType="primary" size="large" symbol={icons.search} />
-      <SquareButton classType="secondary" size="large" symbol={icons.search} />
-
-      <AsyncSelect
-        value={selectedOption}
-        onChange={(so) => setSelectedOption(so)}
-        loadOptions={loadOptions}
-        placeholder={"Search for breeds by name"}
-      />
-    </div>
+    <section className="voting">
+      <div className="voting__container">
+        <ActionsLine onSearch={onSearchSuccess} />
+      </div>
+    </section>
   );
 }
 

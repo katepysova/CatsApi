@@ -1,80 +1,86 @@
 @import "src/styles/variables";
 
 .square-btn {
+  &,
+  &:link,
+  &:visited {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border: none;
     transition: all 0.2s;
     color: $color-pink;
+  }
 
-    &--small {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        color: $color-pink;
-        
-        svg {
-            width: 20px;
-            height: 20px;
-        }
+  &--small {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: $color-pink;
 
-        &.square-btn--primary {
-            background-color: $color-light-pink;
-
-            &:hover,
-            &:active {
-                color: $color-white;
-                background-color: $color-pink;
-            }
-        }
-
-        &.square-btn--secondary {
-            background-color: $color-form-elem;
-
-            &:hover,
-            &:active {
-                color: $color-white;
-                background-color: $color-pink;
-            }
-        }
+    svg {
+      width: 20px;
+      height: 20px;
     }
 
-    &--large {
-        background-color: $color-white;
-        width: 60px;
-        height: 60px;
-        border-radius: 20px;
+    &.square-btn--primary {
+      background-color: $color-light-pink;
 
-        svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        &:hover {
-            background-color: $color-light-pink;
-        }
-
-        &:active {
-            color: $color-white;
-            background-color: $color-pink;
-        }
+      &:hover,
+      &:active {
+        color: $color-white;
+        background-color: $color-pink;
+      }
     }
+
+    &.square-btn--secondary {
+      background-color: $color-form-elem;
+
+      &:hover,
+      &:active {
+        color: $color-white;
+        background-color: $color-pink;
+      }
+    }
+  }
+
+  &--large {
+    background-color: $color-white;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      background-color: $color-light-pink;
+    }
+
+    &:active {
+      color: $color-white;
+      background-color: $color-pink;
+    }
+  }
 }
 
 .dark-theme {
-    .square-btn--small.square-btn--primary {
-        background-color: rgba($color-pink, 0.2);
-    }
-    .square-btn--large {
-        background-color: rgba($color-pink, 0.05);
-        &:hover {
-            background-color: $color-light-pink;
-        }
+  .square-btn--small.square-btn--primary {
+    background-color: rgba($color-pink, 0.2);
+  }
 
-        &:active {
-            color: $color-white;
-            background-color: $color-pink;
-        }
+  .square-btn--large {
+    background-color: rgba($color-pink, 0.05);
+
+    &:hover {
+      background-color: $color-light-pink;
     }
+
+    &:active {
+      color: $color-white;
+      background-color: $color-pink;
+    }
+  }
 }

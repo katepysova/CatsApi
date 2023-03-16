@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+
+.voting {
+  &__container {
+    padding: 30px;
+  }
+}
+
+.actions-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__search {
+    flex-grow: 1;
+  }
+
+  &__nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

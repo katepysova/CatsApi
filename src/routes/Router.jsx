@@ -5,6 +5,7 @@ import { IS_DEV } from "@constants/constants.js";
 import UiKitPage from "@pages/ui-kit.jsx";
 import HomePage from "@pages/index.jsx";
 import VotingPage from "@pages/voting.jsx";
+import SearchPage from "@pages/search.jsx";
 
 function AppRouter() {
   return (
@@ -12,6 +13,7 @@ function AppRouter() {
       <Routes>
         <Route index exact path={routes.index} element={<HomePage />} />
         <Route index exact path={routes.voting} element={<VotingPage />} />
+        <Route index exact path={routes.search.pattern} element={<SearchPage />} />
 
         {IS_DEV && <Route exact path={routes.uiKit} element={<UiKitPage />} />}
 
