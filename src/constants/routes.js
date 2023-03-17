@@ -1,10 +1,7 @@
 const routes = {
   index: "/",
   voting: "/voting",
-  search: {
-    path: (id) => `/search?breed_ids=${id}`,
-    pattern: "/search"
-  },
+  search: "/search",
   likes: "/likes",
   dislikes: "/dislikes",
   favourites: "/favourites",

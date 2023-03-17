@@ -3,6 +3,7 @@ import Logger from "@common/logger.js";
 import API from "@common/api.js";
 import debounce from "lodash.debounce";
 import { apiUrls } from "@constants/apiUrls.js";
+import Grid from "@components/shared/Grid/Grid.jsx";
 import { useState } from "react";
 
 function UiKitPage() {
@@ -32,6 +33,8 @@ function UiKitPage() {
 
   return (
     <div style={{ padding: 50, backgroundColor: "#e5e5e5", minHeight: "100vh" }}>
+      <Grid items={[1, 2, 3, 4, 5, 6, 6]} renderItem={(item) => <div>{item}</div>} />
+
       <AsyncSelect
         value={selectedOption}
         onChange={(so) => setSelectedOption(so)}

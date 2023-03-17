@@ -1,0 +1,20 @@
+@import "src/styles/variables";
+
+.page-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__title {
+        text-transform: uppercase;
+        color: $color-white;
+        background-color: $color-pink;
+        padding: 5px 30px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 2px;
+
+    }
+}

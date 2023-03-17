@@ -30,9 +30,9 @@ function Aside() {
         </div>
 
         <div className="aside__content">
-          <h1 className="aside__title heading-primary">Hi intern!</h1>
-          <p className="aside__welcome">Welcome to MSI 2021 Front-end test</p>
-          <p className="aside__paragraph">Lets start using The Dogs API</p>
+          <h1 className="aside__title heading-primary">Welcome!!!</h1>
+          <p className="aside__welcome">Are you fond of cats?</p>
+          <p className="aside__paragraph">Lets start using The Cats API</p>
           <Nav />
         </div>
       </div>

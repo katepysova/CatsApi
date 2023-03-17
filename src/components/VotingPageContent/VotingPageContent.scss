@@ -1,23 +1,65 @@
 @import "src/styles/variables";
+@import "src/styles/functions";
 
 .voting {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   &__container {
     padding: 30px;
-  }
-}
-
-.actions-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  &__search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     flex-grow: 1;
   }
 
-  &__nav-buttons {
+  &__content {
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1;
+    background-color: $color-form-elem;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__loader {
+    padding-bottom: m-percentage(360, 640);
+
+    .loader {
+      position: absolute;
+      top: 35%;
+    }
+  }
+
+  &__image {
+
+    position: relative;
+
+    &-container {
+      padding-bottom: m-percentage(360, 640);
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+   
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-controls {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+    }
   }
 }

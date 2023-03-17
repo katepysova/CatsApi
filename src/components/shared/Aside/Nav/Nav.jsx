@@ -35,9 +35,9 @@ function Nav() {
               to={item.href}
             >
               <div className={cn("nav__card", `nav__card--${index + 1}`)}>
-                <div className="nav__card-image">
+                <figure className="nav__card-image">
                   <img src={item.image.img} alt={item.image.alt} />
-                </div>
+                </figure>
                 <p className="nav__card-text u-center">{item.text}</p>
               </div>
             </NavLink>

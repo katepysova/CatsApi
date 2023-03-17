@@ -13,7 +13,7 @@ function AppRouter() {
       <Routes>
         <Route index exact path={routes.index} element={<HomePage />} />
         <Route index exact path={routes.voting} element={<VotingPage />} />
-        <Route index exact path={routes.search.pattern} element={<SearchPage />} />
+        <Route index exact path={routes.search} element={<SearchPage />} />
 
         {IS_DEV && <Route exact path={routes.uiKit} element={<UiKitPage />} />}
 

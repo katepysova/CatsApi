@@ -4,6 +4,7 @@ import search from "@icons/search.svg";
 import smile from "@icons/smile.svg";
 import sad from "@icons/sad.svg";
 import heartOutline from "@icons/heart-outline.svg";
+import arrowLeft from "@icons/arrow-left.svg";
 
 const icons = {
   eyeOpen,
@@ -11,7 +12,8 @@ const icons = {
   search,
   smile,
   sad,
-  heartOutline
+  heartOutline,
+  arrowLeft
 };
 
 export default icons;

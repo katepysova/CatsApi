@@ -3,13 +3,15 @@ import PropTypes from "prop-types";
 import Logger from "@common/logger.js";
 import API from "@common/api.js";
 import debounce from "lodash.debounce";
-
+import { Link } from "react-router-dom";
 import { apiUrls } from "@constants/apiUrls.js";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import routes from "@constants/routes.js";
 
-function ActionsLine({ initialSearchValue, onSearch }) {
+import "./ActionsLine.scss";
+
+function ActionsLine({ initialSearchValue, onSearch, isSearchPage }) {
   const mapOptionsToValues = (options) => {
     return options.map((option) => ({
       value: option.id,
@@ -33,16 +35,23 @@ function ActionsLine({ initialSearchValue, onSearch }) {
   }, 300);
 
   return (
-    <div className="voting__actions-line actions-line">
-      <AsyncSelect
-        value={initialSearchValue || ""}
-        onChange={(selectedOption) => {
-          onSearch(selectedOption);
-        }}
-        loadOptions={loadOptions}
-        placeholder={"Search for breeds by name"}
-        className="actions-line__search"
-      />
+    <div className="actions-line">
+      {isSearchPage ? (
+        <AsyncSelect
+          value={initialSearchValue || ""}
+          onChange={(selectedOption) => {
+            onSearch(selectedOption);
+          }}
+          loadOptions={loadOptions}
+          placeholder={"Search for breeds by name"}
+          className="actions-line__search"
+        />
+      ) : (
+        <Link className="actions-line__search-nav" to={routes.search}>
+          Got to the Search Page
+        </Link>
+      )}
+
       <div className="actions-line__nav-buttons">
         <SquareButton
           classType="primary"
@@ -72,7 +81,9 @@ function ActionsLine({ initialSearchValue, onSearch }) {
 
 ActionsLine.propTypes = {
   onSearch: PropTypes.func,
-  initialSearchValue: PropTypes.any
+  initialSearchValue: PropTypes.any,
+  renderComponent: PropTypes.func,
+  isSearchPage: PropTypes.bool
 };
 
 export default ActionsLine;

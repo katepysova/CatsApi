@@ -4,13 +4,14 @@ import cn from "classnames";
 import Icon from "@components/shared/Icon/Icon.jsx";
 import "./SquareButton.scss";
 
-function SquareButton({ size, symbol, classType, isLink, href }) {
+function SquareButton({ size, symbol, classType, isLink, href, ...props }) {
   return isLink ? (
     <Link
       to={href}
       className={cn("square-btn", `square-btn--${size}`, {
         [`square-btn--${classType}`]: size === "small"
       })}
+      {...props}
     >
       <Icon symbol={symbol} />
     </Link>
@@ -19,6 +20,7 @@ function SquareButton({ size, symbol, classType, isLink, href }) {
       className={cn("square-btn", `square-btn--${size}`, {
         [`square-btn--${classType}`]: size === "small"
       })}
+      {...props}
     >
       <Icon symbol={symbol} />
     </button>
