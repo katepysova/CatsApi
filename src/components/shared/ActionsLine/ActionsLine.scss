@@ -1,29 +1,30 @@
 @import "src/styles/variables";
 
 .actions-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__search {
+    flex-grow: 1;
+
+    &-nav {
+      margin-right: auto;
+      padding: 18px 24px;
+      border-radius: 10px;
+      background-color: $color-purple;
+      color: $color-white;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $color-pink;
+      }
+    }
+  }
+
+  &__nav-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
-
-    &__search {
-        flex-grow: 1;
-        &-nav {
-          margin-right: auto;
-          padding: 18px 24px;
-          border-radius: 10px;
-          background-color: $color-purple;
-          color: $color-white;
-          transition: all .2s;
-
-          &:hover {
-            background-color: $color-pink;
-          }
-        }
-    }
-  
-    &__nav-buttons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
   }
+}
