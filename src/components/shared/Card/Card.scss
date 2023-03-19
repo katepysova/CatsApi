@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .card {
   border-radius: 20px;
   align-self: stretch;
@@ -6,6 +8,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 
   &__image {
     flex: 1;
@@ -20,6 +23,57 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  &__hover {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-pink, 0.6);
+    transition: all 0.4s;
+
+    &-content {
+      position: absolute;
+      z-index: 1;
+      background-color: $color-white;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0;
+      color: $color-pink;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $color-light-pink;
+      }
+
+      &--bottom {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+      }
+
+      &--full-width {
+        width: 90%;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  &.card--with-hover {
+    &:hover {
+      .card__hover {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
 }

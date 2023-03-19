@@ -41,7 +41,7 @@ UserActions.propTypes = {
   onLikeClick: PropTypes.func.isRequired,
   onFavClick: PropTypes.func.isRequired,
   onDislikeClick: PropTypes.func.isRequired,
-  isFavLoading: PropTypes.bool.isRequired
+  isFavLoading: PropTypes.bool
 };
 
 export default UserActions;
