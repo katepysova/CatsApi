@@ -26,6 +26,7 @@
 
   &__loader {
     padding-bottom: m-percentage(360, 640);
+    padding-top: 0;
 
     .loader {
       position: absolute;
@@ -59,5 +60,12 @@
       bottom: 0;
       transform: translate(-50%, 50%);
     }
+  }
+
+  &__logs {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
   }
 }

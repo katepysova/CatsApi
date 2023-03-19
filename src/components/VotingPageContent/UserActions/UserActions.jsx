@@ -5,7 +5,7 @@ import cn from "classnames";
 
 import "./UserActions.scss";
 
-function UserActions({ className, onLikeClick, onFavClick, onDislikeClick }) {
+function UserActions({ className, onLikeClick, onFavClick, onDislikeClick, isFavLoading }) {
   const buttons = [
     {
       icon: icons.smile,
@@ -23,7 +23,12 @@ function UserActions({ className, onLikeClick, onFavClick, onDislikeClick }) {
   return (
     <div className={cn("user-actions", className)}>
       {buttons.map((button, index) => (
-        <button className="user-actions__btn" onClick={button.onClick} key={index}>
+        <button
+          disabled={isFavLoading}
+          className={cn("user-actions__btn")}
+          onClick={button.onClick}
+          key={index}
+        >
           <Icon symbol={button.icon} size={30} />
         </button>
       ))}
@@ -35,7 +40,8 @@ UserActions.propTypes = {
   className: PropTypes.string,
   onLikeClick: PropTypes.func.isRequired,
   onFavClick: PropTypes.func.isRequired,
-  onDislikeClick: PropTypes.func.isRequired
+  onDislikeClick: PropTypes.func.isRequired,
+  isFavLoading: PropTypes.bool.isRequired
 };
 
 export default UserActions;
