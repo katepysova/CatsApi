@@ -6,6 +6,10 @@ const routes = {
   dislikes: "/dislikes",
   favourites: "/favourites",
   breeds: "/breeds",
+  breed: {
+    url: (id) => `/breeds/${id}`,
+    pattern: "/breeds/:id"
+  },
   gallery: "/gallery",
   uiKit: "/ui-kit"
 };

@@ -8,6 +8,7 @@ import PageControls from "@components/shared/PageControls/PageControls.jsx";
 import LoaderContainer from "@components/shared/Loader/LoaderContainer/LoaderContainer.jsx";
 import Grid from "@components/shared/Grid/Grid.jsx";
 import Card from "@components/shared/Card/Card.jsx";
+import routes from "@constants/routes.js";
 import "./BreedsPageContent.scss";
 
 function BreedsPageContent() {
@@ -17,7 +18,7 @@ function BreedsPageContent() {
   const getCats = async () => {
     try {
       setCatsLoading(true);
-      const response = await API.get(`${apiUrls.searchImages}?limit=25&has_breeds=1`);
+      const response = await API.get(`${apiUrls.searchImages}?limit=25&has_breeds=1&order=ASC`);
       const cats = response.data;
       setCatsList(cats);
     } catch (error) {
@@ -36,7 +37,7 @@ function BreedsPageContent() {
     return (
       <Link
         className="card__hover-content card__hover-content--bottom card__hover-content--full-width u-center"
-        to={""}
+        to={routes.breed.url(item.id)}
       >
         {breedName}
       </Link>
