@@ -1,10 +1,8 @@
 import AsyncSelect from "@components/shared/AsyncSelect/AsyncSelect.jsx";
 import PropTypes from "prop-types";
-import Logger from "@common/logger.js";
-import API from "@common/api.js";
-import debounce from "lodash.debounce";
+import { useSelector } from "react-redux";
+import { breedsSelector } from "@store/breeds/breeds.selectors.js";
 import { Link } from "react-router-dom";
-import { apiUrls } from "@constants/apiUrls.js";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import routes from "@constants/routes.js";
@@ -12,27 +10,15 @@ import routes from "@constants/routes.js";
 import "./ActionsLine.scss";
 
 function ActionsLine({ initialSearchValue, onSearch, isSearchPage }) {
-  const mapOptionsToValues = (options) => {
-    return options.map((option) => ({
-      value: option.id,
-      label: option.name
-    }));
+  const breeds = useSelector(breedsSelector);
+
+  const filterOptions = (inputValue) => {
+    return breeds?.filter((i) => i.label.toLowerCase().includes(inputValue.toLowerCase()));
   };
 
-  const loadOptions = debounce((inputValue, callback) => {
-    API.get(apiUrls.breeds)
-      .then((response) => response.data)
-      .then((breedsData) => {
-        const formattedBreeds = mapOptionsToValues(breedsData);
-        const filterOptions = (inputValue) => {
-          return formattedBreeds.filter((i) =>
-            i.label.toLowerCase().includes(inputValue.toLowerCase())
-          );
-        };
-        callback(filterOptions(inputValue));
-      })
-      .catch((error) => Logger.error(error));
-  }, 300);
+  const loadOptions = (inputValue, callback) => {
+    callback(filterOptions(inputValue));
+  };
 
   return (
     <div className="actions-line">

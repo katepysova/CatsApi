@@ -31,10 +31,10 @@ function BreedPageContent() {
   }, []);
 
   return (
-    <section className="breed-page">
-      <div className="breed-page__container">
+    <section className="breed-page page">
+      <div className="breed-page__container page__container">
         <ActionsLine />
-        <div className="breed-page__content">
+        <div className="breed-page__content page__content">
           <PageControls pageTitle="Breed" />
           {!cat && isLoading && <LoaderContainer className="u-flex-grow-1" />}
           {cat && !isLoading && (

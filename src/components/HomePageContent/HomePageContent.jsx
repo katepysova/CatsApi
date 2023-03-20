@@ -3,8 +3,8 @@ import "./HomePageContent.scss";
 
 function HomePageContent() {
   return (
-    <div className="home-page">
-      <div className="home-page__container">
+    <div className="home-page page">
+      <div className="home-page__container page__container">
         <div className="home-page__content">
           <img src={girlAndPetImg} alt="Girl and pet" />
         </div>

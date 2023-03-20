@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import "./PageControls.scss";
 
-function PageControls({ pageTitle }) {
+function PageControls({ pageTitle, extraElems }) {
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
@@ -14,12 +14,14 @@ function PageControls({ pageTitle }) {
     <div className="page-controls">
       <SquareButton symbol={icons.arrowLeft} classType="primary" size="small" onClick={goBack} />
       <div className="page-controls__title u-center">{pageTitle}</div>
+      {extraElems && extraElems()}
     </div>
   );
 }
 
 PageControls.propTypes = {
-  pageTitle: PropTypes.string.isRequired
+  pageTitle: PropTypes.string.isRequired,
+  extraElems: PropTypes.any
 };
 
 export default PageControls;

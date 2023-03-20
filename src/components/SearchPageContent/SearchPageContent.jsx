@@ -37,8 +37,8 @@ function SearchPageContent() {
   }, [breed]);
 
   return (
-    <section className="search-page">
-      <div className="search-page__container">
+    <section className="search-page page">
+      <div className="search-page__container page__container">
         <ActionsLine
           isSearchPage
           initialSearchValue={breed}
@@ -46,7 +46,7 @@ function SearchPageContent() {
             setBreed(value);
           }}
         />
-        <div className="search-page__content">
+        <div className="search-page__content page__content">
           <PageControls pageTitle="Search" />
           {breed && breed.label && (
             <p className="search-page__results-info">

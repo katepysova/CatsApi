@@ -2,16 +2,9 @@
 @import "src/styles/functions";
 
 .home-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 
   &__container {
     min-height: 100%;
-    padding: 30px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
   }
 

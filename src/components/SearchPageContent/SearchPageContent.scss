@@ -1,31 +1,9 @@
 @import "src/styles/variables";
 
 .search-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  &__container {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-grow: 1;
-  }
-
-  &__content {
-    border-radius: 20px;
-    padding: 20px;
-    flex: 1;
-    background-color: $color-form-elem;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
   &__results-info {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 30px; 
     font-weight: 400;
     color: $color-text-grey;
 
