@@ -1,7 +1,6 @@
 const routes = {
   index: "/",
   voting: "/voting",
-  search: "/search",
   likes: "/likes",
   dislikes: "/dislikes",
   favourites: "/favourites",

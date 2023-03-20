@@ -2,14 +2,13 @@ import AsyncSelect from "@components/shared/AsyncSelect/AsyncSelect.jsx";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { breedsSelector } from "@store/breeds/breeds.selectors.js";
-import { Link } from "react-router-dom";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import routes from "@constants/routes.js";
 
 import "./ActionsLine.scss";
 
-function ActionsLine({ initialSearchValue, onSearch, isSearchPage }) {
+function ActionsLine({ initialSearchValue, onSearch, withSearch }) {
   const breeds = useSelector(breedsSelector);
 
   const filterOptions = (inputValue) => {
@@ -22,7 +21,7 @@ function ActionsLine({ initialSearchValue, onSearch, isSearchPage }) {
 
   return (
     <div className="actions-line">
-      {isSearchPage ? (
+      {withSearch && (
         <AsyncSelect
           value={initialSearchValue || ""}
           onChange={(selectedOption) => {
@@ -32,10 +31,6 @@ function ActionsLine({ initialSearchValue, onSearch, isSearchPage }) {
           placeholder={"Search for breeds by name"}
           className="actions-line__search"
         />
-      ) : (
-        <Link className="actions-line__search-nav" to={routes.search}>
-          Got to the Search Page
-        </Link>
       )}
 
       <div className="actions-line__nav-buttons">
@@ -69,7 +64,7 @@ ActionsLine.propTypes = {
   onSearch: PropTypes.func,
   initialSearchValue: PropTypes.any,
   renderComponent: PropTypes.func,
-  isSearchPage: PropTypes.bool
+  withSearch: PropTypes.bool
 };
 
 export default ActionsLine;

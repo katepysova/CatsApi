@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+
+.gallery-page {
+  &__loader {
+    padding-bottom: m-percentage(360, 640);
+    padding-top: 0;
+
+    .loader {
+      position: absolute;
+      top: 35%;
+    }
+  }
+}

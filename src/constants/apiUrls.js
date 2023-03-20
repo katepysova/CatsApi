@@ -3,6 +3,7 @@ export const baseURL = process.env.REACT_APP_API_URL;
 export const apiUrls = {
   votes: "/votes",
   favourites: "/favourites",
+  categories: "/categories",
   deleteFavourite: (id) => `/favourites/${id}`,
   searchImages: "/images/search",
   getImageById: (id) => `/images/${id}`,

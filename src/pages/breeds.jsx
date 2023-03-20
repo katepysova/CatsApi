@@ -1,7 +1,7 @@
 import MainLayout from "@layout/MainLayout.jsx";
 import BreedsPageContent from "@components/BreedsPageContent/BreedsPageContent.jsx";
 
-function BreedsPage() {
+function SearchPage() {
   return (
     <MainLayout>
       <BreedsPageContent />
@@ -9,4 +9,4 @@ function BreedsPage() {
   );
 }
 
-export default BreedsPage;
+export default SearchPage;

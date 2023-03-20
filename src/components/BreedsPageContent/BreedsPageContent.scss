@@ -1,13 +1,28 @@
 @import "src/styles/variables";
 
 .breeds-page {
-  &__loader {
-    padding-bottom: m-percentage(360, 640);
-    padding-top: 0;
+  &__results-info {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: $color-text-grey;
 
-    .loader {
-      position: absolute;
-      top: 35%;
+    span {
+      font-weight: 500;
+      color: $color-text;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-item {
+      span {
+        font-weight: 500;
+        color: $color-text;
+      }
     }
   }
 }
