@@ -1,0 +1,20 @@
+@import "src/styles/variables";
+
+.select {
+  &__dropdown-indicator {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-grey;
+  }
+
+  &__control {
+    caret-color: transparent;
+
+    &--is-focused {
+      border-color: $color-pink !important;
+    }
+  }
+}

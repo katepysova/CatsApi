@@ -1,0 +1,20 @@
+@import "src/styles/variables";
+
+.async-select {
+  &__search {
+    width: 40px;
+    height: 40px;
+    background-color: $color-light-pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: $color-pink;
+  }
+
+  &__control {
+    &--is-focused {
+      border-color: $color-pink !important;
+    }
+  }
+}

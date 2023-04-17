@@ -1,4 +1,4 @@
-import MainLayout from "@layout/MainLayout.jsx";
+import MainLayout from "@layout/MainLayout/MainLayout.jsx";
 import VotingPageContent from "@components/VotingPageContent/VotingPageContent.jsx";
 
 function VotingPage() {

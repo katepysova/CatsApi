@@ -56,6 +56,10 @@ function BreedPageContent() {
                   </div>
                   <div>
                     <div className="breed-page__cell">
+                      <span>Origin:</span>&nbsp;
+                      {cat?.breeds[0]?.origin || "-"}
+                    </div>
+                    <div className="breed-page__cell">
                       <span>Weight:</span>&nbsp;
                       {cat?.breeds[0]?.weight.metric || "-"} kgs
                     </div>

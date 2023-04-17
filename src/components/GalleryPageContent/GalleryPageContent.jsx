@@ -11,7 +11,7 @@ import LoaderContainer from "@components/shared/Loader/LoaderContainer/LoaderCon
 import Grid from "@components/shared/Grid/Grid.jsx";
 import Card from "@components/shared/Card/Card.jsx";
 import routes from "@constants/routes.js";
-import Select from "@components/shared/Select/Select.jsx";
+import Select from "@components/shared/Select/Select/Select.jsx";
 import "./GalleryPageContent.scss";
 
 const DEFAULT_LIMIT = {

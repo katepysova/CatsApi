@@ -1,9 +1,9 @@
-export const asyncSelectStyles = {
+export const selectStyles = {
   control: (styles, state) => ({
     ...styles,
     height: 60,
     minHeight: 60,
-    boxShadow: null,
+    boxShadow: "none",
     borderType: "solid",
     borderWidth: "2px",
     padding: "8px 10px 8px 20px",
@@ -68,8 +68,8 @@ export const asyncSelectStyles = {
     borderType: "solid",
     borderWidth: "2px",
     overflow: "hidden",
-    borderRadius: "30px",
-    border: "none",
+    borderRadius: "20px",
+    border: "2px solid #ff868e",
     boxShadow: "none",
     padding: "15px 0"
   }),
@@ -85,7 +85,13 @@ export const asyncSelectStyles = {
     position: "relative",
     fontWeight: 400,
     color: state.isSelected ? "#FF868E" : "#8C8C8C",
+    backgroundColor: state.isSelected ? "#fbe0dc" : "#ffffff",
     padding: "5px 20px",
-    cursor: "pointer"
+    cursor: "pointer",
+    transition: "all 0.2s",
+
+    "&:hover": {
+      backgroundColor: "#fbe0dc"
+    }
   })
 };

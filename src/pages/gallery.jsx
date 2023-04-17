@@ -1,4 +1,4 @@
-import MainLayout from "@layout/MainLayout.jsx";
+import MainLayout from "@layout/MainLayout/MainLayout.jsx";
 import GalleryPageContent from "@components/GalleryPageContent/GalleryPageContent.jsx";
 
 function GalleryPage() {

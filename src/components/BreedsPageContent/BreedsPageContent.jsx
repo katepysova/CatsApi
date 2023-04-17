@@ -77,7 +77,7 @@ function SearchPageContent() {
                   </p>
                   <p className="breeds-page__info-item">
                     <span>Weight:</span>&nbsp;
-                    {breedInfo.weight.metric || "-"} kgs
+                    {breedInfo.weight?.metric || "-"} kgs
                   </p>
                 </div>
               )}

@@ -5,8 +5,7 @@ import ReactAsyncSelect from "react-select/async";
 import { components } from "react-select";
 import Icon from "@components/shared/Icon/Icon.jsx";
 import icons from "@components/shared/Icon/icons.js";
-import { asyncSelectStyles } from "./asyncSelectStyles.js";
-import "./AsyncSelect.scss";
+import { selectStyles } from "../selectGeneralStyles.js";
 
 function AsyncSelect({
   loadOptions,
@@ -46,7 +45,7 @@ function AsyncSelect({
       }}
       loadingMessage={() => loadingMessage}
       noOptionsMessage={() => noOptionsMessage}
-      styles={asyncSelectStyles}
+      styles={selectStyles}
       {...props}
     />
   );

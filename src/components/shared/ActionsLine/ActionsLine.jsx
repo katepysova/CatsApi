@@ -1,4 +1,4 @@
-import AsyncSelect from "@components/shared/AsyncSelect/AsyncSelect.jsx";
+import AsyncSelect from "@components/shared/Select/AsyncSelect/AsyncSelect.jsx";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { breedsSelector } from "@store/breeds/breeds.selectors.js";

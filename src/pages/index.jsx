@@ -1,5 +1,5 @@
 import HomePageContent from "@components/HomePageContent/HomePageContent.jsx";
-import MainLayout from "@layout/MainLayout.jsx";
+import MainLayout from "@layout/MainLayout/MainLayout.jsx";
 
 function HomePage() {
   return (
