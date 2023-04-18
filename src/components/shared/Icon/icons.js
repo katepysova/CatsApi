@@ -9,6 +9,7 @@ import arrowLeft from "@icons/arrow-left.svg";
 import arrowDown from "@icons/arrow-down.svg";
 import reload from "@icons/reload.svg";
 import trash from "@icons/trash.svg";
+import cross from "@icons/cross.svg";
 
 const icons = {
   eyeOpen,
@@ -21,7 +22,8 @@ const icons = {
   arrowLeft,
   arrowDown,
   reload,
-  trash
+  trash,
+  cross
 };
 
 export default icons;

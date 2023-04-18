@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+
+.modal {
+  &__overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color-black, 0.6);
+  }
+
+  &__container {
+    margin: auto;
+    position: absolute;
+    max-width: 680px;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: $color-white;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+}

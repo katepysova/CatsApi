@@ -15,6 +15,7 @@ import Select from "@components/shared/Select/Select/Select.jsx";
 import EmptyState from "@components/shared/EmptyState/EmptyState.jsx";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
+import Modal from "@components/shared/Modal/Modal.jsx";
 import {
   DEFAULT_BREED,
   DEFAULT_LIMIT,
@@ -31,6 +32,12 @@ function BreedsPageContent() {
   const [catsList, setCatsList] = useState(null);
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
+
+  const [isModalOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen((state) => !state);
+  };
 
   let updatedBreeds = [];
 
@@ -130,6 +137,8 @@ function BreedsPageContent() {
           )}
         </div>
       </div>
+      <button onClick={toggleOpen}>Open</button>
+      <Modal isOpen={isModalOpen} handleClose={toggleOpen} />
     </section>
   );
 }
