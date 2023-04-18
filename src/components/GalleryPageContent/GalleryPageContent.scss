@@ -10,4 +10,32 @@
       top: 35%;
     }
   }
+
+  &__filters {
+    background-color: $color-background;
+    border-radius: 20px;
+    padding: 10px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  &__reload-btn {
+    justify-self: end;
+    align-self: end;
+  }
+}
+
+
+.select {
+  &__label {
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+    color: $color-text-grey;
+  }
 }

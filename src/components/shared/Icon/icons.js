@@ -6,6 +6,7 @@ import sad from "@icons/sad.svg";
 import heartOutline from "@icons/heart-outline.svg";
 import arrowLeft from "@icons/arrow-left.svg";
 import arrowDown from "@icons/arrow-down.svg";
+import reload from "@icons/reload.svg";
 
 const icons = {
   eyeOpen,
@@ -15,7 +16,8 @@ const icons = {
   sad,
   heartOutline,
   arrowLeft,
-  arrowDown
+  arrowDown,
+  reload
 };
 
 export default icons;

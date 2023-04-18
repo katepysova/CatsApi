@@ -12,6 +12,9 @@ import Grid from "@components/shared/Grid/Grid.jsx";
 import Card from "@components/shared/Card/Card.jsx";
 import routes from "@constants/routes.js";
 import Select from "@components/shared/Select/Select/Select.jsx";
+import EmptyState from "@components/shared/EmptyState/EmptyState.jsx";
+import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
+import icons from "@components/shared/Icon/icons.js";
 import "./GalleryPageContent.scss";
 
 const DEFAULT_LIMIT = {
@@ -68,25 +71,25 @@ function BreedsPageContent() {
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
   const [selectedBreed, setSelectedBreed] = useState(DEFAULT_BREED);
   const [order, setOrder] = useState(DEFAULT_ORDER);
-  const [catsList, setCatsList] = useState([]);
+  const [catsList, setCatsList] = useState(null);
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
 
   let updatedBreeds = [];
 
-  function addExtraBreed(item) {
-    const breedsCopy = breeds.slice();
-    breedsCopy.unshift(item);
-    return breedsCopy;
+  function addExtraItem(item, arr) {
+    const arrCopy = arr.slice();
+    arrCopy.unshift(item);
+    return arrCopy;
   }
 
   if (breeds) {
-    updatedBreeds = addExtraBreed(DEFAULT_BREED);
+    updatedBreeds = addExtraItem(DEFAULT_BREED, breeds);
   }
 
   const getCats = async () => {
     try {
-      setCatsList([]);
+      setCatsList(null);
       setCatsLoading(true);
       const response = await API.get(
         `${apiUrls.searchImages}?limit=${limit?.value}&breed_ids=${selectedBreed?.value}&order=${order.value}&has_breeds=1`
@@ -124,17 +127,35 @@ function BreedsPageContent() {
           <PageControls pageTitle="Gallery" />
 
           <div className="gallery-page__filters">
-            <Select options={limits} onChange={(option) => setLimit(option)} value={limit} />
-            <Select options={orders} onChange={(option) => setOrder(option)} value={order} />
-            <Select
-              options={updatedBreeds}
-              onChange={(option) => setSelectedBreed(option)}
-              value={selectedBreed}
+            <div className="select__wrapper">
+              <p className="select__label">Limit</p>
+              <Select options={limits} onChange={(option) => setLimit(option)} value={limit} />
+            </div>
+            <div className="select__wrapper">
+              <p className="select__label">Order</p>
+              <Select options={orders} onChange={(option) => setOrder(option)} value={order} />
+            </div>
+
+            <div className="select__wrapper">
+              <p className="select__label">Breed</p>
+              <Select
+                options={updatedBreeds}
+                onChange={(option) => setSelectedBreed(option)}
+                value={selectedBreed}
+              />
+            </div>
+            <SquareButton
+              className={"gallery-page__reload-btn"}
+              onClick={getCats}
+              symbol={icons.reload}
+              size="small"
+              classType="secondary"
             />
           </div>
 
-          {isCatsLoading && <LoaderContainer className="u-flex-grow-1" />}
-          {catsList.length > 0 && (
+          {!catsList && isCatsLoading && <LoaderContainer className="u-flex-grow-1" />}
+          {catsList && catsList.length === 0 && <EmptyState />}
+          {catsList && catsList.length > 0 && (
             <Grid
               items={catsList}
               renderItem={(item) => (
