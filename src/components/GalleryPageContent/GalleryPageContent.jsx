@@ -15,57 +15,14 @@ import Select from "@components/shared/Select/Select/Select.jsx";
 import EmptyState from "@components/shared/EmptyState/EmptyState.jsx";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
+import {
+  DEFAULT_BREED,
+  DEFAULT_LIMIT,
+  DEFAULT_ORDER,
+  ORDER_OPTIONS,
+  LIMIT_OPTIONS
+} from "./options.js";
 import "./GalleryPageContent.scss";
-
-const DEFAULT_LIMIT = {
-  label: "Limit: 5",
-  value: 5
-};
-
-const DEFAULT_ORDER = {
-  label: "Random",
-  value: "RANDOM"
-};
-
-const DEFAULT_BREED = { value: "", label: "All breeds" };
-
-const orders = [
-  {
-    label: "Random",
-    value: "RANDOM"
-  },
-  {
-    label: "Ascending",
-    value: "ASC"
-  },
-  {
-    label: "Descending",
-    value: "DESC"
-  }
-];
-
-const limits = [
-  {
-    label: "Limit: 5",
-    value: 5
-  },
-  {
-    label: "Limit: 15",
-    value: 15
-  },
-  {
-    label: "Limit: 45",
-    value: 45
-  },
-  {
-    label: "Limit: 80",
-    value: 80
-  },
-  {
-    label: "Limit: 100",
-    value: 100
-  }
-];
 
 function BreedsPageContent() {
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
@@ -129,11 +86,19 @@ function BreedsPageContent() {
           <div className="gallery-page__filters">
             <div className="select__wrapper">
               <p className="select__label">Limit</p>
-              <Select options={limits} onChange={(option) => setLimit(option)} value={limit} />
+              <Select
+                options={LIMIT_OPTIONS}
+                onChange={(option) => setLimit(option)}
+                value={limit}
+              />
             </div>
             <div className="select__wrapper">
               <p className="select__label">Order</p>
-              <Select options={orders} onChange={(option) => setOrder(option)} value={order} />
+              <Select
+                options={ORDER_OPTIONS}
+                onChange={(option) => setOrder(option)}
+                value={order}
+              />
             </div>
 
             <div className="select__wrapper">

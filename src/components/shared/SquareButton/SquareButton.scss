@@ -35,7 +35,6 @@
 
     &.square-btn--secondary {
       background-color: $color-form-elem;
-
       &:hover,
       &:active {
         color: $color-white;
@@ -59,6 +58,7 @@
       background-color: $color-light-pink;
     }
 
+    &.square-btn--active,
     &:active {
       color: $color-white;
       background-color: $color-pink;

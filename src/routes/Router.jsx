@@ -6,6 +6,7 @@ import VotingPage from "@pages/voting.jsx";
 import BreedsPage from "@pages/breeds.jsx";
 import GalleryPage from "@pages/gallery.jsx";
 import BreedPage from "@pages/breed.jsx";
+import LikesPage from "@pages/likes.jsx";
 
 function AppRouter() {
   return (
@@ -16,6 +17,7 @@ function AppRouter() {
         <Route index exact path={routes.breeds} element={<BreedsPage />} />
         <Route index exact path={routes.gallery} element={<GalleryPage />} />
         <Route index exact path={routes.breed.pattern} element={<BreedPage />} />
+        <Route index exact path={routes.likes} element={<LikesPage />} />
 
         {/*
         <Route path="*" element={<NotFoundPage />} />

@@ -1,37 +1,27 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import cn from "classnames";
 import Icon from "@components/shared/Icon/Icon.jsx";
 import "./SquareButton.scss";
 
 function SquareButton({ size, symbol, classType, className, isLink, href, ...props }) {
+  const currentClass = (className, isActive) =>
+    cn(
+      "square-btn",
+      { "square-btn--active": isActive },
+      `square-btn--${size}`,
+      {
+        [`square-btn--${classType}`]: size === "small"
+      },
+      className
+    );
+
   return isLink ? (
-    <Link
-      to={href}
-      className={cn(
-        "square-btn",
-        `square-btn--${size}`,
-        {
-          [`square-btn--${classType}`]: size === "small"
-        },
-        className
-      )}
-      {...props}
-    >
+    <NavLink to={href} className={({ isActive }) => currentClass(className, isActive)} {...props}>
       <Icon symbol={symbol} />
-    </Link>
+    </NavLink>
   ) : (
-    <button
-      className={cn(
-        "square-btn",
-        `square-btn--${size}`,
-        {
-          [`square-btn--${classType}`]: size === "small"
-        },
-        className
-      )}
-      {...props}
-    >
+    <button className={currentClass(className)} {...props}>
       <Icon symbol={symbol} />
     </button>
   );
