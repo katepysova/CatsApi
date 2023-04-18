@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+@import "src/styles/typography";
+
+.dislike-page {
+  &__loader {
+    padding-bottom: m-percentage(360, 640);
+    padding-top: 0;
+
+    .loader {
+      position: absolute;
+      top: 35%;
+    }
+  }
+}

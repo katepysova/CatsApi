@@ -1,10 +1,10 @@
 import MainLayout from "@layout/MainLayout/MainLayout.jsx";
-import LikesPageContent from "@components/LikesPageContent/LikesPageContent.jsx";
+import DislikesPageContent from "@components/DislikesPageContent/DislikesPageContent.jsx";
 
 function LikesPage() {
   return (
     <MainLayout>
-      <LikesPageContent />
+      <DislikesPageContent />
     </MainLayout>
   );
 }
