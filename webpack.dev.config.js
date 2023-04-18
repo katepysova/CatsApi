@@ -24,9 +24,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
-      favicon: "public/favicon.ico",
-      title: "MyCourses"
+      template: "public/index.html"
     }),
     new miniCssExtractPlugin(),
     new Dotenv(),
