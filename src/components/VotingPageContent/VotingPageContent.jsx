@@ -5,7 +5,7 @@ import API from "@common/api.js";
 import UserLog from "@components/shared/UserLog/UserLog.jsx";
 import UserActions from "./UserActions/UserActions.jsx";
 import LoaderContainer from "@components/shared/Loader/LoaderContainer/LoaderContainer.jsx";
-import { apiUrls } from "@constants/apiUrls.js";
+import { apiUrls, subId } from "@constants/apiUrls.js";
 import Logger from "@common/logger.js";
 import moment from "moment";
 import { timeFormat } from "@constants/constants.js";
@@ -33,7 +33,7 @@ function VotingPageContent() {
 
   const onVoteClick = async (value) => {
     try {
-      const body = { image_id: image.id, value };
+      const body = { image_id: image.id, value, sub_id: subId };
       setIsLoading(true);
       setImage(null);
       await API.post(apiUrls.votes, body);
@@ -46,7 +46,8 @@ function VotingPageContent() {
   const onFavClick = async () => {
     try {
       const body = {
-        image_id: image.id
+        image_id: image.id,
+        sub_id: subId
       };
       setIsFavLoading(true);
       if (image.fav_id) {

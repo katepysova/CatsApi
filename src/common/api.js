@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseURL } from "@constants/apiUrls";
+import { baseURL } from "@constants/apiUrls.js";
 
 const X_API_KEY = process.env.REACT_APP_X_API_KEY;
 
