@@ -6,7 +6,7 @@ import "./LoaderContainer.scss";
 function LoaderContainer({ className }) {
   return (
     <div className={cn("loader-container", className)}>
-      <Loader />
+      <Loader size="large" />
     </div>
   );
 }

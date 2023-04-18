@@ -16,6 +16,7 @@ import EmptyState from "@components/shared/EmptyState/EmptyState.jsx";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import Modal from "@components/shared/Modal/Modal.jsx";
+import Button from "@components/shared/Button/Button.jsx";
 import {
   DEFAULT_BREED,
   DEFAULT_LIMIT,
@@ -88,7 +89,15 @@ function BreedsPageContent() {
       <div className="gallery-page__container page__container">
         <ActionsLine />
         <div className="gallery-page__content page__content">
-          <PageControls pageTitle="Gallery" />
+          <PageControls pageTitle="Gallery">
+            <Button
+              classType="secondary"
+              type="button"
+              onClick={toggleOpen}
+              text="Upload"
+              icon={icons.upload}
+            />
+          </PageControls>
 
           <div className="gallery-page__filters">
             <div className="select__wrapper">
@@ -137,7 +146,6 @@ function BreedsPageContent() {
           )}
         </div>
       </div>
-      <button onClick={toggleOpen}>Open</button>
       <Modal isOpen={isModalOpen} handleClose={toggleOpen} />
     </section>
   );

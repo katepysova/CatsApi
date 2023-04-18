@@ -1,0 +1,59 @@
+@import "src/styles/variables";
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all .2s;
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &--primary:not(:disabled) {
+    color: $color-white;
+    background-color: $color-pink;
+
+    &:hover,&:active {
+        color: $color-pink;
+        background-color: $color-light-pink;
+    }
+  }
+
+  &--secondary:not(:disabled) {
+    color: $color-pink;
+    background-color: $color-light-pink;
+
+    &:hover,&:active {
+        background-color: $color-pink;
+        color: $color-white;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $color-light-grey;
+    color: $color-text-grey;
+  }
+
+  &--with-loader {
+    padding-left: 56px !important;
+    position: relative; 
+  }
+
+  &--loader {
+    border-color: inherit !important;
+    position: absolute;
+    top: 30%;
+    left: 30px;
+  }
+
+}
