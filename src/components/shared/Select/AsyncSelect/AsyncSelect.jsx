@@ -7,6 +7,8 @@ import Icon from "@components/shared/Icon/Icon.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import { selectStyles } from "../selectGeneralStyles.js";
 
+import "./AsyncSelect.scss";
+
 function AsyncSelect({
   loadOptions,
   placeholder = "Select...",

@@ -28,7 +28,7 @@ function ActionsLine({ initialSearchValue, onSearch, withSearch }) {
             onSearch(selectedOption);
           }}
           loadOptions={loadOptions}
-          placeholder={"Search for breeds by name"}
+          placeholder={"Search..."}
           className="actions-line__search"
         />
       )}
