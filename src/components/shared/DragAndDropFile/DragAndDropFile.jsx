@@ -30,7 +30,7 @@ function DragAndDropFile({ handleFileUpdate }) {
     setDragActive(false);
     const newFile = event.target.files[0];
 
-    if (newFile) {
+    if (newFile && (newFile.type.match("image/png") || newFile.type.match("image/jpeg"))) {
       setFile(newFile);
       handleFileUpdate(newFile);
     }
@@ -41,7 +41,7 @@ function DragAndDropFile({ handleFileUpdate }) {
     setDragActive(false);
     const newFile = event.dataTransfer.files[0];
 
-    if (newFile) {
+    if (newFile && (newFile.type.match("image/png") || newFile.type.match("image/jpeg"))) {
       setFile(newFile);
       handleFileUpdate(newFile);
     }
@@ -69,6 +69,7 @@ function DragAndDropFile({ handleFileUpdate }) {
           id="input-file-upload"
           multiple={false}
           onChange={handleFileChange}
+          accept="image/png, image/jpeg"
         />
         <label className="drag-and-drop__label" id="label-file-upload" htmlFor="input-file-upload">
           <img src={fileImage} alt="file" />

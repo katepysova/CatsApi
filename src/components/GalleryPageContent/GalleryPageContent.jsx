@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Logger from "@common/logger.js";
 import { Link } from "react-router-dom";
 import API from "@common/api.js";
-import { apiUrls } from "@constants/apiUrls.js";
+import { apiUrls, subId } from "@constants/apiUrls.js";
 import { useSelector } from "react-redux";
 import { breedsSelector } from "@store/breeds/breeds.selectors.js";
 import ActionsLine from "@components/shared/ActionsLine/ActionsLine.jsx";
@@ -35,7 +35,7 @@ function BreedsPageContent() {
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
 
-  const [, setFile] = useState("");
+  const [file, setFile] = useState("");
 
   const [isModalOpen, setIsOpen] = useState(true);
 
@@ -68,6 +68,20 @@ function BreedsPageContent() {
       Logger.error(error);
     } finally {
       setCatsLoading(false);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("sub_id", subId);
+      await API.post(apiUrls.upload, formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      });
+    } catch (error) {
+      Logger.error(error);
     }
   };
 
@@ -151,7 +165,7 @@ function BreedsPageContent() {
         </div>
       </div>
       <Modal isOpen={isModalOpen} handleClose={toggleOpen}>
-        <form className="upload-form">
+        <form className="upload-form" onSubmit={handleSubmit}>
           <h2 className="upload-form__title u-center">Upload a .jpg or .png Cat Image</h2>
           <p className="upload-form__text u-center">
             Any uploads must comply with the&nbsp;
@@ -161,6 +175,14 @@ function BreedsPageContent() {
             &nbsp;or face deletion.
           </p>
           <DragAndDropFile handleFileUpdate={(newFile) => setFile(newFile)} />
+          {file && (
+            <Button
+              className="upload-form__submit-btn"
+              type="submit"
+              text="Upload photo"
+              classType="primary"
+            />
+          )}
         </form>
       </Modal>
     </section>

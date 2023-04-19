@@ -7,6 +7,7 @@ export const apiUrls = {
   deleteVote: (id) => `/votes/${id}`,
   favourites: `/favourites`,
   deleteFavourite: (id) => `/favourites/${id}`,
+  upload: `/images/upload`,
   searchImages: "/images/search",
   getImageById: (id) => `/images/${id}`,
   breeds: "/breeds",
