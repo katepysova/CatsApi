@@ -4,7 +4,7 @@ import cn from "classnames";
 import Icon from "@components/shared/Icon/Icon.jsx";
 import "./SquareButton.scss";
 
-function SquareButton({ size, symbol, classType, className, isLink, href, ...props }) {
+function SquareButton({ size, symbol, type, classType, className, isLink, href, ...props }) {
   const currentClass = (className, isActive) =>
     cn(
       "square-btn",
@@ -21,7 +21,7 @@ function SquareButton({ size, symbol, classType, className, isLink, href, ...pro
       <Icon symbol={symbol} />
     </NavLink>
   ) : (
-    <button className={currentClass(className)} {...props}>
+    <button className={currentClass(className)} type={type} {...props}>
       <Icon symbol={symbol} />
     </button>
   );
@@ -31,6 +31,7 @@ SquareButton.propTypes = {
   size: PropTypes.oneOf(["large", "small"]).isRequired,
   symbol: PropTypes.any,
   classType: PropTypes.oneOf(["primary", "secondary"]).isRequired,
+  type: PropTypes.oneOf(["button", "submit"]),
   className: PropTypes.string,
   isLink: PropTypes.bool,
   href: PropTypes.string

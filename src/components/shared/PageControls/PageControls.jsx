@@ -12,7 +12,13 @@ function PageControls({ pageTitle, children }) {
   };
   return (
     <div className="page-controls">
-      <SquareButton symbol={icons.arrowLeft} classType="primary" size="small" onClick={goBack} />
+      <SquareButton
+        symbol={icons.arrowLeft}
+        classType="primary"
+        size="small"
+        onClick={goBack}
+        type="button"
+      />
       <div className="page-controls__title u-center">{pageTitle}</div>
       <div className="page-controls__extra-content">{children}</div>
     </div>

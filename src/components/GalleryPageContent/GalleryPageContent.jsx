@@ -35,7 +35,7 @@ function BreedsPageContent() {
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
 
-  const [file, setFile] = useState("");
+  const [, setFile] = useState("");
 
   const [isModalOpen, setIsOpen] = useState(true);
 
@@ -134,6 +134,7 @@ function BreedsPageContent() {
               symbol={icons.reload}
               size="small"
               classType="secondary"
+              type="button"
             />
           </div>
 
@@ -160,10 +161,6 @@ function BreedsPageContent() {
             &nbsp;or face deletion.
           </p>
           <DragAndDropFile handleFileUpdate={(newFile) => setFile(newFile)} />
-
-          <p className="upload-form__file u-center">
-            {file ? `Image File Name: ${file?.name}` : "No file selected"}
-          </p>
         </form>
       </Modal>
     </section>

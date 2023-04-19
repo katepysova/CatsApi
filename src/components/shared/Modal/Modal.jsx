@@ -20,6 +20,7 @@ function Modal({ isOpen, handleClose, children }) {
         size="small"
         symbol={icons.cross}
         onClick={handleClose}
+        type="button"
       />
       <div className="modal__content">{children}</div>
     </ReactModal>
