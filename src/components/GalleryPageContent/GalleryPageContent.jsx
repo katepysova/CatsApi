@@ -17,6 +17,7 @@ import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
 import Modal from "@components/shared/Modal/Modal.jsx";
 import Button from "@components/shared/Button/Button.jsx";
+import DragAndDropFile from "@components/shared/DragAndDropFile/DragAndDropFile.jsx";
 import {
   DEFAULT_BREED,
   DEFAULT_LIMIT,
@@ -34,7 +35,9 @@ function BreedsPageContent() {
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
 
-  const [isModalOpen, setIsOpen] = useState(false);
+  const [file, setFile] = useState("");
+
+  const [isModalOpen, setIsOpen] = useState(true);
 
   const toggleOpen = () => {
     setIsOpen((state) => !state);
@@ -126,7 +129,7 @@ function BreedsPageContent() {
               />
             </div>
             <SquareButton
-              className={"gallery-page__reload-btn"}
+              className="gallery-page__reload-btn"
               onClick={getCats}
               symbol={icons.reload}
               size="small"
@@ -146,7 +149,23 @@ function BreedsPageContent() {
           )}
         </div>
       </div>
-      <Modal isOpen={isModalOpen} handleClose={toggleOpen} />
+      <Modal isOpen={isModalOpen} handleClose={toggleOpen}>
+        <form className="upload-form">
+          <h2 className="upload-form__title u-center">Upload a .jpg or .png Cat Image</h2>
+          <p className="upload-form__text u-center">
+            Any uploads must comply with the&nbsp;
+            <a className="upload-form__link" href="https://www.thecatapi.com/privacy">
+              upload guidelines
+            </a>
+            &nbsp;or face deletion.
+          </p>
+          <DragAndDropFile handleFileUpdate={(newFile) => setFile(newFile)} />
+
+          <p className="upload-form__file u-center">
+            {file ? `Image File Name: ${file?.name}` : "No file selected"}
+          </p>
+        </form>
+      </Modal>
     </section>
   );
 }

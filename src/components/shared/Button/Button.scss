@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &__text {
     font-size: 12px;
@@ -22,9 +22,10 @@
     color: $color-white;
     background-color: $color-pink;
 
-    &:hover,&:active {
-        color: $color-pink;
-        background-color: $color-light-pink;
+    &:hover,
+    &:active {
+      color: $color-pink;
+      background-color: $color-light-pink;
     }
   }
 
@@ -32,9 +33,10 @@
     color: $color-pink;
     background-color: $color-light-pink;
 
-    &:hover,&:active {
-        background-color: $color-pink;
-        color: $color-white;
+    &:hover,
+    &:active {
+      background-color: $color-pink;
+      color: $color-white;
     }
   }
 
@@ -46,7 +48,7 @@
 
   &--with-loader {
     padding-left: 56px !important;
-    position: relative; 
+    position: relative;
   }
 
   &--loader {
@@ -55,5 +57,4 @@
     top: 30%;
     left: 30px;
   }
-
 }
