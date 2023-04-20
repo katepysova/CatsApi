@@ -85,6 +85,7 @@ function BreedsPageContent() {
           headers: { "Content-Type": "multipart/form-data" }
         });
         setMessage({ type: "success", text: "Thanks for the Upload - Cat found!" });
+        setFile("");
       } else {
         setMessage({ type: "error", text: "Wrong file type!" });
       }

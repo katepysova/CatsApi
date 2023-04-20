@@ -30,7 +30,7 @@ function DragAndDropFile({ handleFileUpdate }) {
     setDragActive(false);
     const newFile = event.target.files[0];
 
-    if (newFile && newFile.type.match("image.*")) {
+    if ((newFile && newFile.type.match("image/png")) || newFile.type.match("image/jpeg")) {
       setFile(newFile);
       handleFileUpdate(newFile);
     }
@@ -41,7 +41,7 @@ function DragAndDropFile({ handleFileUpdate }) {
     setDragActive(false);
     const newFile = event.dataTransfer.files[0];
 
-    if (newFile && newFile.type.match("image.*")) {
+    if ((newFile && newFile.type.match("image/png")) || newFile.type.match("image/jpeg")) {
       setFile(newFile);
       handleFileUpdate(newFile);
     }
