@@ -11,6 +11,8 @@ import reload from "@icons/reload.svg";
 import trash from "@icons/trash.svg";
 import cross from "@icons/cross.svg";
 import upload from "@icons/upload.svg";
+import check from "@icons/check.svg";
+import decline from "@icons/decline.svg";
 
 const icons = {
   eyeOpen,
@@ -25,7 +27,9 @@ const icons = {
   reload,
   trash,
   cross,
-  upload
+  upload,
+  check,
+  decline
 };
 
 export default icons;

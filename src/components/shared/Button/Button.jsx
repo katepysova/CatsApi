@@ -4,11 +4,12 @@ import Icon from "@components/shared/Icon/Icon.jsx";
 import Loader from "@components/shared/Loader/Loader.jsx";
 import "./Button.scss";
 
-function Button({ type, classType, text, isLoading, icon, className, ...props }) {
+function Button({ type, classType, text, isLoading, icon, className, disabled, ...props }) {
   return (
     <button
       className={cn("btn", `btn--${classType}`, { "btn--with-loader": isLoading }, className)}
       type={type}
+      disabled={isLoading || disabled}
       {...props}
     >
       {isLoading && <Loader size="small" className="btn--loader" />}
@@ -23,6 +24,7 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
   isLoading: PropTypes.bool,
+  disabled: PropTypes.bool,
   icon: PropTypes.any
 };
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Logger from "@common/logger.js";
 import { Link } from "react-router-dom";
 import API from "@common/api.js";
+import cn from "classnames";
 import { apiUrls, subId } from "@constants/apiUrls.js";
 import { useSelector } from "react-redux";
 import { breedsSelector } from "@store/breeds/breeds.selectors.js";
@@ -15,6 +16,7 @@ import Select from "@components/shared/Select/Select/Select.jsx";
 import EmptyState from "@components/shared/EmptyState/EmptyState.jsx";
 import SquareButton from "@components/shared/SquareButton/SquareButton.jsx";
 import icons from "@components/shared/Icon/icons.js";
+import Icon from "@components/shared/Icon/Icon.jsx";
 import Modal from "@components/shared/Modal/Modal.jsx";
 import Button from "@components/shared/Button/Button.jsx";
 import DragAndDropFile from "@components/shared/DragAndDropFile/DragAndDropFile.jsx";
@@ -34,6 +36,8 @@ function BreedsPageContent() {
   const [catsList, setCatsList] = useState(null);
   const [isCatsLoading, setCatsLoading] = useState(false);
   const breeds = useSelector(breedsSelector);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState(null);
 
   const [file, setFile] = useState("");
 
@@ -72,16 +76,25 @@ function BreedsPageContent() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    setIsLoading(true);
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("sub_id", subId);
-      await API.post(apiUrls.upload, formData, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
+      event.preventDefault();
+      if (file.type.match("image/png") || file.type.match("image/jpeg")) {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("sub_id", subId);
+        await API.post(apiUrls.upload, formData, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
+        setMessage({ type: "success", text: "Thanks for the Upload - Cat found!" });
+      } else {
+        setMessage({ type: "error", text: "Wrong file type!" });
+      }
     } catch (error) {
       Logger.error(error);
+      setMessage({ type: "error", text: error.response.data });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -174,14 +187,33 @@ function BreedsPageContent() {
             </a>
             &nbsp;or face deletion.
           </p>
-          <DragAndDropFile handleFileUpdate={(newFile) => setFile(newFile)} />
+          <DragAndDropFile
+            handleFileUpdate={(newFile) => {
+              setMessage(null);
+              setFile(newFile);
+            }}
+          />
           {file && (
             <Button
               className="upload-form__submit-btn"
               type="submit"
               text="Upload photo"
               classType="primary"
+              isLoading={isLoading}
             />
+          )}
+          {message && (
+            <div className="upload-form__message">
+              <span
+                className={cn(
+                  "upload-form__message-icon",
+                  `upload-form__message-icon--${message.type}`
+                )}
+              >
+                <Icon size={20} symbol={message.type === "success" ? icons.check : icons.decline} />
+              </span>
+              <p className="upload-form__message-text">{message.text}</p>
+            </div>
           )}
         </form>
       </Modal>
