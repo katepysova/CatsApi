@@ -13,6 +13,7 @@ import cross from "@icons/cross.svg";
 import upload from "@icons/upload.svg";
 import check from "@icons/check.svg";
 import decline from "@icons/decline.svg";
+import burger from "@icons/burger.svg";
 
 const icons = {
   eyeOpen,
@@ -29,7 +30,8 @@ const icons = {
   cross,
   upload,
   check,
-  decline
+  decline,
+  burger
 };
 
 export default icons;

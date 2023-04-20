@@ -7,9 +7,19 @@
   top: 0;
   align-self: start;
 
+  @media only screen and (max-width: $bp-large) {
+    position: relative;
+    align-self: stretch;
+    top: auto;
+  }
+
   &__container {
     max-width: 446px;
     margin: 0 auto;
+
+    @media only screen and (max-width: $bp-large) {
+      max-width: 100%;
+    }
   }
 
   &__line {

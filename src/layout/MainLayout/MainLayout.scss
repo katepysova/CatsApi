@@ -9,5 +9,15 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 0.45fr 0.55fr;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__aside {
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
   }
 }

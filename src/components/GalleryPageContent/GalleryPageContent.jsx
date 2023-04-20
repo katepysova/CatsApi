@@ -39,10 +39,10 @@ function BreedsPageContent() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [file, setFile] = useState("");
-  const [isModalOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleOpen = () => {
-    setIsOpen((state) => !state);
+    setIsModalOpen((state) => !state);
   };
 
   let updatedBreeds = [];
