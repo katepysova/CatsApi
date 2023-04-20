@@ -8,6 +8,8 @@ export const apiUrls = {
   favourites: `/favourites`,
   deleteFavourite: (id) => `/favourites/${id}`,
   upload: `/images/upload`,
+  getUploads: "/images/",
+  deleteUpload: (id) => `/images/${id}`,
   searchImages: "/images/search",
   getImageById: (id) => `/images/${id}`,
   breeds: "/breeds",

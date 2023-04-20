@@ -55,6 +55,13 @@ function ActionsLine({ initialSearchValue, onSearch, withSearch }) {
           isLink
           href={routes.dislikes}
         />
+        <SquareButton
+          classType="secondary"
+          size="large"
+          symbol={icons.upload}
+          isLink
+          href={routes.uploads}
+        />
       </div>
     </div>
   );

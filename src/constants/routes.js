@@ -4,6 +4,7 @@ const routes = {
   likes: "/likes",
   dislikes: "/dislikes",
   favourites: "/favourites",
+  uploads: "/uploads",
   breeds: "/breeds",
   breed: {
     url: (id) => `/breeds/${id}`,

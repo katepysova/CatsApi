@@ -38,10 +38,8 @@ function BreedsPageContent() {
   const breeds = useSelector(breedsSelector);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
-
   const [file, setFile] = useState("");
-
-  const [isModalOpen, setIsOpen] = useState(true);
+  const [isModalOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
     setIsOpen((state) => !state);
