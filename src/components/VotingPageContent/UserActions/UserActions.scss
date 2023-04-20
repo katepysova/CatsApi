@@ -62,5 +62,10 @@
       cursor: not-allowed;
       background-color: $color-light-pink;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 60px;
+      height: 60px;
+    }
   }
 }

@@ -13,6 +13,10 @@
     top: auto;
   }
 
+  @media only screen and (max-width: $bp-small) {
+    padding: 18px;
+  }
+
   &__container {
     max-width: 446px;
     margin: 0 auto;
@@ -22,17 +26,8 @@
     }
   }
 
-  &__line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 80px;
-  }
-
-  &__logo {
-    &-img {
-      max-width: 108px;
-    }
+  &__content {
+    margin-top: 80px;
   }
 
   &__title {

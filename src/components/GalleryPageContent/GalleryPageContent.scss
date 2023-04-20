@@ -12,7 +12,7 @@
   }
 
   &__filters {
-    background-color: $color-background;
+    background-color: $color-bg-light;
     border-radius: 20px;
     padding: 10px 20px 20px;
     display: grid;
@@ -20,11 +20,21 @@
     row-gap: 10px;
     column-gap: 20px;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__reload-btn {
     justify-self: end;
     align-self: end;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-self: stretch;
+      align-self: stretch;
+      width: 100%;
+    }
   }
 }
 

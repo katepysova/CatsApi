@@ -4,7 +4,7 @@ import useWindowResize from "@hooks/useWindowResize.js";
 export default function useGetWindowSize() {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
-    windth: window.innerWidth
+    width: window.innerWidth
   });
 
   function handleResize() {

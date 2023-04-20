@@ -1,7 +1,17 @@
+@import "src/styles/variables";
+
 .u-center {
   text-align: center;
 }
 
 .u-flex-grow-1 {
   flex-grow: 1;
+}
+
+.u-padded {
+  padding: 30px;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 18px;
+  }
 }

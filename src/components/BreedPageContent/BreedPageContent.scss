@@ -1,5 +1,6 @@
 @import "src/styles/variables";
 @import "src/styles/typography";
+@import "src/styles/functions";
 
 .breed-page {
   &__loader {
@@ -36,6 +37,10 @@
     border: 2px solid $color-light-pink;
     padding: 24px;
     border-radius: 20px;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 16px;
+    }
   }
 
   &__title {

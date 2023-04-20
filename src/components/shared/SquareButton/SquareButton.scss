@@ -34,7 +34,7 @@
     }
 
     &.square-btn--secondary {
-      background-color: $color-form-elem;
+      background-color: $color-white;
 
       &:hover,
       &:active {
@@ -63,6 +63,16 @@
     &:active {
       color: $color-white;
       background-color: $color-pink;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 54px;
+      height: 54px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
     }
   }
 }

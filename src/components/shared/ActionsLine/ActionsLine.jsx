@@ -25,7 +25,9 @@ function ActionsLine({ initialSearchValue, onSearch, withSearch }) {
     setIsModalOpen((state) => !state);
   };
 
-  useWindowResize(() => setIsModalOpen(false));
+  const setModalClose = () => setIsModalOpen(false);
+
+  useWindowResize(setModalClose);
 
   const filterOptions = (inputValue) => {
     return breeds?.filter((i) => i.label.toLowerCase().includes(inputValue.toLowerCase()));
@@ -91,7 +93,7 @@ function ActionsLine({ initialSearchValue, onSearch, withSearch }) {
       </div>
       <Modal isOpen={isModalOpen} handleClose={toggleOpen}>
         <div className="mobile-nav">
-          <Nav />
+          <Nav onNavLinkClick={setModalClose} />
         </div>
       </Modal>
     </div>

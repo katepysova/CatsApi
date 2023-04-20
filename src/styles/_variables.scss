@@ -23,6 +23,7 @@ $color-black: #1d1d1d;
 $color-white: #fff;
 $color-text-grey: #8c8c8c;
 $color-light-grey: #f8f8f7;
+$color-bg-light: #e5e5e5;
 $color-purple: #b4b7ff;
 $color-green: #97eab9;
 $color-yellow: #ffd280;
@@ -31,5 +32,6 @@ $color-light-pink: #fbe0dc;
 $color-background: var(--color-bg);
 $color-text: var(--color-text);
 $color-form-elem: var(--color-form-elem);
-
 $bp-large: 1100px;
+$bp-medium: 600px;
+$bp-small: 450px;

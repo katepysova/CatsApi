@@ -11,6 +11,13 @@
     height: 100px;
     border-top: 8px solid $color-light-pink;
     border-right: 8px solid transparent;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 64px;
+      height: 64px;
+      border-top: 4px solid $color-light-pink;
+      border-right: 4px solid transparent;
+    }
   }
 
   &--small {

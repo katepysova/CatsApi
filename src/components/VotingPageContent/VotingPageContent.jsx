@@ -86,16 +86,16 @@ function VotingPageContent() {
   }, []);
 
   return (
-    <section className="voting">
-      <div className="voting__container">
+    <section className="voting-page page">
+      <div className="voting-page__container page__container">
         <ActionsLine />
-        <div className="voting__content">
+        <div className="voting-page__content page__content">
           <PageControls pageTitle="Voting" />
-          <div className="voting__image">
+          <div className="voting-page__image">
             {isLoading && !image && <LoaderContainer className={"voting__loader"} />}
             {!isLoading && image && (
               <>
-                <figure className="voting__image-container">
+                <figure className="voting-page__image-container">
                   <img src={image && image.url} alt="cat" />
                 </figure>
                 <UserActions
@@ -123,13 +123,13 @@ function VotingPageContent() {
                       }
                     ]);
                   }}
-                  className={"voting__image-controls"}
+                  className={"voting-page__image-controls"}
                 />
               </>
             )}
           </div>
           {logs && logs.length > 0 && (
-            <div className="voting__logs">
+            <div className="voting-page__logs">
               {logs
                 .slice()
                 .reverse()

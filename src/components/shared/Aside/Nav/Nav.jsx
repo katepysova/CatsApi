@@ -4,6 +4,7 @@ import votingImg from "@images/vote-table.png";
 import petBreedsImg from "@images/pet-breeds.png";
 import searchImg from "@images/images-search.png";
 import routes from "@constants/routes.js";
+import PropTypes from "prop-types";
 import "./Nav.scss";
 
 const navItems = [
@@ -24,7 +25,7 @@ const navItems = [
   }
 ];
 
-function Nav() {
+function Nav({ onNavLinkClick }) {
   return (
     <nav className="nav">
       <ul className="nav__list">
@@ -33,6 +34,7 @@ function Nav() {
             <NavLink
               className={({ isActive }) => (isActive ? "nav__link nav__link--active" : "nav__link")}
               to={item.href}
+              onClick={onNavLinkClick}
             >
               <div className={cn("nav__card", `nav__card--${index + 1}`)}>
                 <figure className="nav__card-image">
@@ -47,5 +49,9 @@ function Nav() {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  onNavLinkClick: PropTypes.func
+};
 
 export default Nav;

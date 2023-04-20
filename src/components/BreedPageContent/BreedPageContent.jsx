@@ -40,7 +40,7 @@ function BreedPageContent() {
           {cat && !isLoading && (
             <>
               <div className="breed-page__image">
-                <figure className="voting__image-container">
+                <figure className="breed-page__image-container">
                   <img src={cat && cat.url} alt="cat" />
                 </figure>
               </div>

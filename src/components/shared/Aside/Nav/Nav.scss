@@ -10,6 +10,14 @@
     @media only screen and (max-width: $bp-large) {
       gap: 54px;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-gap: 24px;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-gap: 16px;
+    }
   }
 
   &__card {
@@ -38,6 +46,10 @@
 
       @media only screen and (max-width: $bp-large) {
         padding-bottom: 80%;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        padding-bottom: 100%;
       }
     }
 
