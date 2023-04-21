@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import routes from "@constants/routes.js";
 import HomePage from "@pages/index.jsx";
 import VotingPage from "@pages/voting.jsx";
@@ -14,7 +14,7 @@ import NotFoundPage from "@pages/not-found.jsx";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route index exact path={routes.index} element={<HomePage />} />
         <Route index exact path={routes.voting} element={<VotingPage />} />
@@ -27,7 +27,7 @@ function AppRouter() {
         <Route index exact path={routes.uploads} element={<UploadsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

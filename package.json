@@ -1,4 +1,5 @@
 {
+  "homepage": "https://katepysova.github.io/CatsAPI",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -25,9 +26,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
-    "deploy" : "gh-pages -d cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
-    "eject": "react-scripts eject",
+    "predeploy": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
+    "deploy" : "gh-pages -d build",
     "lint:fix": "eslint --ext .js --ext .jsx --fix .",
     "stylelint:fix": "stylelint --fix **/*.{scss,sass}",
     "format": "npm run stylelint:fix && npm run lint:fix"
