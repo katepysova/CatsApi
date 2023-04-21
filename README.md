@@ -18,6 +18,13 @@ See [Project Demo](https://katepysova.github.io/CatsApi/) serviced on GitHub Pag
 
 5. `git add .husky/pre-commit` - to add git pre-commit hook.
 
+6. `touch .env` - to create `.env` file.
+
+7. Add following content to `.env`:  
+   `REACT_APP_API_KEY`=Your API key generated [here](https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=FJkYOq9tW).  
+   `REACT_APP_API_URL`=https://api.thecatapi.com/v1
+   `REACT_APP_API_SUB_ID`=Read about it [here](https://www.thecatapi.com/privacy).
+
 ## How to run
 
 - `npm run start` - to start the app on the localhost. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
