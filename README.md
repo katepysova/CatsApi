@@ -22,7 +22,7 @@ See [Project Demo](https://katepysova.github.io/CatsApi/) serviced on GitHub Pag
 
 7. Add following content to `.env`:  
    `REACT_APP_API_KEY`=Your API key generated [here](https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=FJkYOq9tW).  
-   `REACT_APP_API_URL`=https://api.thecatapi.com/v1
+   `REACT_APP_API_URL`=https://api.thecatapi.com/v1  
    `REACT_APP_API_SUB_ID`=Read about it [here](https://www.thecatapi.com/privacy).
 
 ## How to run
