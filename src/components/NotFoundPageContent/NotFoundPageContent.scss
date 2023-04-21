@@ -1,0 +1,10 @@
+.not-found-page {
+  &__image {
+    margin: auto;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

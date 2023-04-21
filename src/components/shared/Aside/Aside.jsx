@@ -13,7 +13,6 @@ function Aside() {
     <aside className="aside">
       <div className="aside__container">
         {isLarge && <Header />}
-
         <div className="aside__content">
           <h1 className="aside__title heading-primary">Welcome!!!</h1>
           <p className="aside__welcome">Are you fond of cats?</p>

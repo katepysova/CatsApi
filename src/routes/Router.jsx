@@ -10,6 +10,7 @@ import LikesPage from "@pages/likes.jsx";
 import DislikesPage from "@pages/dislikes.jsx";
 import FavouritesPage from "@pages/favourites.jsx";
 import UploadsPage from "@pages/uploads.jsx";
+import NotFoundPage from "@pages/not-found.jsx";
 
 function AppRouter() {
   return (
@@ -24,10 +25,7 @@ function AppRouter() {
         <Route index exact path={routes.dislikes} element={<DislikesPage />} />
         <Route index exact path={routes.favourites} element={<FavouritesPage />} />
         <Route index exact path={routes.uploads} element={<UploadsPage />} />
-
-        {/*
         <Route path="*" element={<NotFoundPage />} />
-        */}
       </Routes>
     </BrowserRouter>
   );

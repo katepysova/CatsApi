@@ -92,7 +92,7 @@ function VotingPageContent() {
         <div className="voting-page__content page__content">
           <PageControls pageTitle="Voting" />
           <div className="voting-page__image">
-            {isLoading && !image && <LoaderContainer className={"voting__loader"} />}
+            {isLoading && !image && <LoaderContainer className={"voting-page__loader"} />}
             {!isLoading && image && (
               <>
                 <figure className="voting-page__image-container">
