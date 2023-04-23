@@ -29,6 +29,8 @@ function Select({ options, placeholder, ...props }) {
       hideSelectedOptions={false}
       placeholder={placeholder}
       styles={selectStyles}
+      inputProps={{ readOnly: true }}
+      isSearchable={false}
       className={"select"}
       classNamePrefix="select"
       components={{

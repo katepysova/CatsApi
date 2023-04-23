@@ -112,3 +112,35 @@
     }
   }
 }
+
+.dark-theme {
+  .gallery-page {
+    &__filters {
+      background-color: rgba($color-white, 0.05);
+    }
+  }
+}
+
+.modal.modal--dark {
+  .upload-form {
+    &__title {
+      color: $color-white !important;
+    }
+
+    &__message-text {
+      color: $color-white;
+    }
+
+    .drag-and-drop {
+      background-color: rgba($color-pink, 0.8) !important;
+
+      &__text {
+        color: $color-black;
+
+        span {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

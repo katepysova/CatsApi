@@ -1,5 +1,7 @@
 @import "src/styles/variables";
 
+$modal-bg-dark: #282828;
+
 .modal {
   &__overlay {
     position: fixed;
@@ -43,5 +45,11 @@
     position: absolute;
     right: 20px;
     top: 20px;
+  }
+}
+
+.modal--dark.modal {
+  .modal__container {
+    background-color: $modal-bg-dark;
   }
 }

@@ -5,7 +5,7 @@
   font-weight: 500;
   line-height: 58px;
   letter-spacing: 0;
-  color: $color-black;
+  color: $color-text;
 }
 
 @mixin paragraph($color: $color-text-grey, $span-color: $color-text-grey) {

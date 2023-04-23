@@ -38,3 +38,19 @@
 .mobile-nav {
   padding: 100px 0;
 }
+
+.modal.modal--dark {
+  .mobile-nav {
+    .nav__link {
+      .nav__card-text {
+        background-color: rgba($color-white, 0.1);
+      }
+    }
+
+    .nav__link.nav__link--active {
+      .nav__card-text {
+        background-color: $color-pink;
+      }
+    }
+  }
+}

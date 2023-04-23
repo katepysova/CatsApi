@@ -78,7 +78,7 @@
 }
 
 .dark-theme {
-  .square-btn--small.square-btn--primary {
+  .square-btn--small {
     background-color: rgba($color-pink, 0.2);
   }
 
@@ -89,7 +89,8 @@
       background-color: $color-light-pink;
     }
 
-    &:active {
+    &:active,
+    &.square-btn--active {
       color: $color-white;
       background-color: $color-pink;
     }

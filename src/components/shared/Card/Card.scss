@@ -83,3 +83,11 @@
     }
   }
 }
+
+.dark-theme {
+  .card {
+    &__hover-content {
+      background-color: $color-black;
+    }
+  }
+}

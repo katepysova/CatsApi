@@ -21,7 +21,7 @@
     line-height: 24px;
 
     span {
-      color: $color-black;
+      color: $color-text;
       font-weight: 500;
     }
 
@@ -56,5 +56,16 @@
 
   @media only screen and (max-width: $bp-medium) {
     flex-wrap: wrap;
+  }
+}
+
+.dark-theme {
+  .log {
+    background-color: rgba($color-white, 0.05);
+
+    &__time {
+      background-color: $color-black;
+      color: $color-white;
+    }
   }
 }

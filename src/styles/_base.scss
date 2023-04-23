@@ -82,3 +82,9 @@ ul {
     gap: 20px;
   }
 }
+
+.dark-theme {
+  .page__content {
+    background-color: rgba($color-white, 0.1);
+  }
+}
