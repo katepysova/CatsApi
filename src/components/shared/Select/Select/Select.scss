@@ -18,3 +18,25 @@
     }
   }
 }
+
+.dark-theme {
+  .select {
+    &__control {
+      background-color: rgba($color-white, 0.05);
+      border-color: $color-purple;
+    }
+
+    &__input-container,
+    &__single-value {
+      color: $color-white;
+    }
+
+    &__menu {
+      background-color: $color-light-pink;
+    }
+
+    &__option {
+      background-color: $color-light-pink;
+    }
+  }
+}
