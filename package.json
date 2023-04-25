@@ -30,7 +30,8 @@
     "deploy" : "gh-pages -d build",
     "lint:fix": "eslint --ext .js --ext .jsx --fix .",
     "stylelint:fix": "stylelint --fix **/*.{scss,sass}",
-    "format": "npm run stylelint:fix && npm run lint:fix"
+    "format": "npm run stylelint:fix && npm run lint:fix",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
