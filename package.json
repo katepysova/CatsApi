@@ -1,5 +1,6 @@
 {
   "homepage": "https://katepysova.github.io/CatsAPI",
+  "type":"commonjs",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,

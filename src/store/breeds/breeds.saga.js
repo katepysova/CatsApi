@@ -22,6 +22,6 @@ function* getBreedsWorker() {
   }
 }
 
-const authSaga = [takeLatest(getBreeds.type, getBreedsWorker)];
+const breedsSaga = [takeLatest(getBreeds.type, getBreedsWorker)];
 
-export default authSaga;
+export default breedsSaga;
